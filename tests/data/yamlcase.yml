@@ -1,0 +1,14 @@
+animal: pets
+pets:
+  - dog
+  - cat
+  - fish
+language:
+  human:
+    - Chinese
+    - Japenese
+    - English
+  computer:
+    - C
+    - JAVA
+    - Python
