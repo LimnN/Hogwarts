@@ -1,9 +1,12 @@
 from app import calc
 import pytest
 import json
+import os
 
 
-data = json.load(open('data/cases.json', 'r'))
+path = os.path.dirname(__file__)
+file = os.path.join(path, 'data/cases.json')
+data = json.load(open(file, 'r'))
 adds = data['add']
 subs = data['sub']
 muls = data['mul']
