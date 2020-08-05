@@ -29,3 +29,7 @@ class TestCalc:
     @pytest.mark.parametrize('a, b, result', divs)
     def test_div(self, up_down, a, b, result):
         assert result == up_down.div(a, b)
+
+
+if __name__ == '__main__':
+    pytest.main(["-s", "--alluredir", "./report/result"])

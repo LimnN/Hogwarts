@@ -1,3 +1,5 @@
+import time
+
 from appium.webdriver.webdriver import WebDriver
 
 
@@ -21,6 +23,7 @@ class Contacts(object):
         add = self.driver.find_element_by_id('com.tencent.wework:id/ie')
         add.send_keys('my address1')
         self.driver.find_element_by_id('com.tencent.wework:id/hk6').click()
+        time.sleep(2)
         self.driver.find_element_by_id('com.tencent.wework:id/hkc').click()
 
     def delete_member(self):

@@ -1,29 +1,28 @@
 from appium import webdriver
-from appium.webdriver.webdriver import WebDriver
 
 from mobile.pages.console import Console
 from mobile.pages.contacts import Contacts
 from mobile.pages.me import Me
 from mobile.pages.message import Message
 
+ANDROID_BASE_CAPS = {
+    # 'app': os.path.abspath('../app/wework_3_0_27.apk'),
+    'automationName': 'UIAutomator2',
+    'platformName': 'Android',
+    'platformVersion': '11.0',
+    'deviceName': '9A241FFBA00003',
+    'appPackage': 'com.tencent.wework',
+    'appActivity': '.launch.LaunchSplashActivity',
+    'noReset': True,
+    # 'skipServerInstallation': True,
+    # 'skipDeviceInitialization': True
+}
+
+EXECUTOR = 'http://127.0.0.1:4723/wd/hub'
+
 
 class BasePage(object):
-    def __init__(self, driver: WebDriver):
-        ANDROID_BASE_CAPS = {
-            # 'app': os.path.abspath('../app/wework_3_0_27.apk'),
-            'automationName': 'UIAutomator2',
-            'platformName': 'Android',
-            'platformVersion': '11.0',
-            'deviceName': '9A241FFBA00003',
-            'appPackage': 'com.tencent.wework',
-            'appActivity': '.launch.LaunchSplashActivity',
-            'noReset': True,
-            # 'skipServerInstallation': True,
-            # 'skipDeviceInitialization': True
-        }
-
-        EXECUTOR = 'http://127.0.0.1:4723/wd/hub'
-
+    def __init__(self):
         self.driver = webdriver.Remote(command_executor=EXECUTOR, desired_capabilities=ANDROID_BASE_CAPS)
         self.driver.implicitly_wait(5)
 
