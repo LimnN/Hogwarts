@@ -4,5 +4,4 @@
 __pycache__
 /reports/reports/
 /reports/results/
-*.apk
 .DS_Store
