@@ -21,4 +21,5 @@ class Message(object):
 if __name__ == '__main__':
     device = Device()
     wework = Message(device.driver)
-    wework.to_contacts().add_member()
+    # wework.to_contacts().add_member()
+    wework.to_contacts().delete_member()

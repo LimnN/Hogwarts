@@ -13,10 +13,15 @@ class Device(object):
             'appPackage': 'com.tencent.wework',
             'appActivity': '.launch.LaunchSplashActivity',
             'noReset': True,
-            'skipServerInstallation': True,
-            'skipDeviceInitialization': True
+            # 'skipServerInstallation': True,
+            # 'skipDeviceInitialization': True
         }
 
         EXECUTOR = 'http://127.0.0.1:4723/wd/hub'
 
         self.driver = webdriver.Remote(command_executor=EXECUTOR, desired_capabilities=ANDROID_BASE_CAPS)
+        self.driver.implicitly_wait(5)
+
+
+if __name__ == '__main__':
+    device = Device()
